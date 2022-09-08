@@ -1,0 +1,17 @@
+int binarySearch(int arr[], int start, int endi, int key) {
+  while (start <= endi) {
+    int mid = start + (endi - start) / 2; //if both endi and start out of range of int
+
+    if (arr[mid] == key) // Check if x is present at mid
+      return mid;
+
+    if (arr[mid] < key)
+      start = mid + 1; // If x greater, ignore left half
+
+    else
+      endi = mid - 1; // If x is smaller, ignore right half
+
+  }
+
+  return -1; // not present
+}
