@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+  
+// Header files, namespaces,
+// macros as defined above
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+  
+#define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
+
+int main() {
+
+ 
+  
+     ordered_set a; // check syntax
+     a.insert(0);      //o(log n)
+     a.insert(5);
+     a.insert(4);
+     a.insert(3);
+     a.insert(2);
+     a.insert(1);
+     a.insert(50);
+     a.insert(5100);
+     a.insert(511);
+     a.insert(10);
+  
+  
+  
+  cout<<"item at 0 location in "<<*a.find_by_order(0)<<endl;// accessing element like a[0]  o(log)
+  cout<<"number of element less then 10 "<<a.order_of_key(10)<<endl; // number of element smaller than 10 & also tell at which index if we  insert 10 .  0(log n)
+  
+  
+  
+  for(auto i: a)    //print all elements
+  cout<<i<<endl;
+  
+   
+  
+
+  return 0;
+}
+
