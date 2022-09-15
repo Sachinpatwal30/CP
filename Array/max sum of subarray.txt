@@ -1,0 +1,52 @@
+algo is :
+
+***************************   Kadane Algorithm - TC: O(n)   **************************************
+1. staring sai traverse krte jana aur sab ko add krte jana hey
+2. special case agar -ve numbers bhi ho tho unn numbers ko  eleminate krna hey jinse sum -ve mai aa rha hey
+
+
+class Solution {
+  public:
+    int maxSubArray(vector < int > & x) {
+
+    int sum=0;
+    int maxi=INT_MIN;
+
+    for(int i=0;i<n;i++)
+    {
+
+     sum=sum+x[i];
+     maxi=max(sum,maxi);
+
+     if(sum<0)
+     sum=0;
+
+     }
+
+      return maxi;
+    }
+};
+
+***********************************************************************************************
+1. staring sai traverse krna 
+2. two numbers  ko tb add krna hey jb unka sum +ve ho && sum> x[i] element sai bada ho;
+
+class Solution {
+  public:
+    int maxSubArray(vector < int > & x) {
+
+      
+
+      int sum = x[0];
+      int maxi = x[0];
+
+      for (int i = 1; i < x.size(); i++) {
+        sum = max(x[i], sum + x[i]);        // agr sum+x[i] badda hey tho 
+        maxi = max(sum, maxi);
+      }
+
+      return maxi;
+    }
+};
+
+

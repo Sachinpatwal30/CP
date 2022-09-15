@@ -1,0 +1,51 @@
+Algo: Time O(n) & space O(1)
+
+A sequence sorted in descending order does not have the next permutation.For example“ edcba” does not have the next permutation.then we simply reverse it;
+
+1. Traverse from last and find the index
+while sorting pattren breaks i.e ith index
+
+2. now swap i - 1 index with sightest greatest element in right side of i - 1 th index i.e starting from ith index
+2.1 speacial
+case like 1 3 3 3 in this we have to swap with the last repeating index i.e 3 th index
+
+3. now reverse the array from ith index
+
+void nextPermutation(vector < int > & x) {
+
+  int idx = 0, pidx = 0, sidx = 0; 
+  //idex: index at which pattern breaks 
+  // pidex: index-1;
+  //sidex: index with which we have to swap
+
+  for (int i = x.size() - 1; i >= 0; i--) {
+    if (i == 0) {
+      break;
+    }
+
+    if (x[i] == x[i - 1]) {
+      continue;
+    }
+
+    if (x[i] > x[i - 1]) {
+      idx = i;
+      pidx = i - 1;
+      break;
+    }
+  }
+
+  int md = x[idx] - x[pidx];
+  sidx = idx;
+
+  for (int i = idx + 1; i < x.size(); i++) {
+    if (x[i] - x[pidx] > 0 && x[i] - x[pidx] <= md) //for text case like 1333 output should be 3133
+    {
+      sidx = i;
+      md = x[i] - x[pidx];
+    }
+  }
+
+  swap(x[sidx], x[pidx]);
+  reverse(x.begin() + idx, x.end());
+
+}
