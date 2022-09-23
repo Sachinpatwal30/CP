@@ -28,15 +28,10 @@ Steps:-
     }
 
   }
-  
-  
-  
+
 
 Worst Case Time Complexity [ Big-O ]: O(n²)
 Best Case Time Complexity [Big-omega]: O(n²)
 Average Time Complexity [Big-theta]: O(n²)
 
 It independent of distribution of data.   
-
-
-W
