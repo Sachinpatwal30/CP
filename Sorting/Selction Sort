@@ -1,8 +1,11 @@
 This algo sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning
 
-  Algorithm maintains two subarrays in a given array.
+Algorithm maintains two subarrays in a given array.
 	1.The subarray which already sorted on left.
 	2.The remaining subarray was unsorted on right.
+	
+When to use?
+1.For smaller size of array	
 
 Steps:-
    1. find the smallest element is the unsorted array(right side of ith element) 
@@ -28,5 +31,12 @@ Steps:-
   
   
   
-Selection sort – 
-Best, average and worst case time complexity: n^2 which is independent of distribution of data.   
+
+Worst Case Time Complexity [ Big-O ]: O(n²)
+Best Case Time Complexity [Big-omega]: O(n²)
+Average Time Complexity [Big-theta]: O(n²)
+
+It independent of distribution of data.   
+
+
+W

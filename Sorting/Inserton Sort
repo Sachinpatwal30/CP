@@ -1,0 +1,29 @@
+It works similar to the way you sort playing cards in your hands. 
+The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
+
+Characteristics of Insertion Sort:
+ 1.Efficient for small data values
+ 2.Insertion sort is adaptive in nature, i.e. it is appropriate for data sets which are already partially sorted.
+ 
+
+void insertionSort(int n, vector < int > & a) {
+
+  for (int i = 1; i < n; i++) {              //Assuming first element is already sorted
+    int key = a[i], temp = key, j = i - 1;
+
+    while (j >= 0 && a[j] > key) {           //Finding place of KEY inside sorted array  (no need to traverse till end unless element position is at first place)
+
+      a[j + 1] = a[j];                       //shifting all grerater element by one position right
+      j--; 
+    }
+
+    a[j + 1] = key;    
+
+  }
+
+}
+ 
+ 
+Worst Case Time Complexity [ Big-O ]: O(n²)
+Best Case Time Complexity [Big-omega]: O(n)
+Average Time Complexity [Big-theta]: O(n²)
