@@ -1,0 +1,29 @@
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.
+Not suitable for large data sets
+
+Step:
+  1.Place the largest element a last(by swaping the adjacent elements).
+  2.Repeat till n-1 time.
+  
+  
+void bubbleSort(int arr[], int n)
+ {
+   
+    for (int i = 0; i < n - 1; i++)  // Last i elements are already in place
+ 
+       
+        for (int j = 0; j < n - i - 1; j++)  
+            if (x[j] > x[j + 1])
+                swap(x[j], x[j + 1]);
+ }
+ 
+ 
+Best Case: If the list were already sorted. 
+ 	  a) there will be comparisons as it is but no exchanges and execution time is in O(n²) 
+ 	  b) But if we count the exchanges & count=0 for first itration .(if no swap in i=0)
+ 		Then the program would require only one pass and max. (n-1) comparisons and we can say that the complexity is of order of O(n).
+
+Worst case performance  : O(n²)
+Average case performance O(n²)
+Worst case space complexity O(n) total, O(1) auxiliary
+Optimal No

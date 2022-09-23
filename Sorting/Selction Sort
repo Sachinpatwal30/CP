@@ -1,0 +1,32 @@
+This algo sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning
+
+  Algorithm maintains two subarrays in a given array.
+	1.The subarray which already sorted on left.
+	2.The remaining subarray was unsorted on right.
+
+Steps:-
+   1. find the smallest element is the unsorted array(right side of ith element) 
+   2. and then Swap it with ith element 
+   
+   
+  void selectionSort(int x[]) {
+
+    for (int i = 0; i < n; i++) {
+
+      int mini = i;                      //storing smallest element index
+      for (int j = i + 1; j < n; j++) {
+        if (x[j] < x[mini])
+          mini = j;
+
+      }
+
+      swap(x[mini], x[i]);
+
+    }
+
+  }
+  
+  
+  
+Selection sort – 
+Best, average and worst case time complexity: n^2 which is independent of distribution of data.   
